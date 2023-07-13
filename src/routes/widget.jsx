@@ -7,6 +7,7 @@ import anime from 'animejs'
 function Widget() {
     const param = useLocation().search;
     const username = new URLSearchParams(param).get('user');
+    // URL should look like "https://widget.bruh.ninja/widget?user={username}" 
 
     const [messages, setMessages] = useState([]);
 
