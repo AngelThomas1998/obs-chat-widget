@@ -24,7 +24,7 @@ function Widget() {
         <>
             <ul>
                 {messages.map(message => (
-                    <li key={message.extra.id}>
+                    <li class='chat' key={message.extra.id}>
                         {message.user}: {message.message}
                     </li>
                 ))}

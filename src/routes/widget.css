@@ -1,0 +1,30 @@
+html,body {
+    margin: 0;
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-weight: bold;
+    color: hsl(197, 62%, 32%);
+}
+
+.chat {
+    width: 400px;
+    height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.chat ul {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
+.chat li{
+    background-color: hsl(240, 4%, 10%);
+    box-sizing: border-box;
+    padding: 1rem 10px;
+    margin-bottom: 10px;
+    border-bottom: 10px solid;
+    border-image: linear-gradient(to right,hsl(280, 77%, 78%),hsl(281, 83%, 42%));
+    border-image-slice: 1;
+    width: 100%;
+}
