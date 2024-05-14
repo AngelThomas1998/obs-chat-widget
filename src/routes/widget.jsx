@@ -20,7 +20,7 @@ function Widget() {
         };
         return () => ComfyJS.Disconnect();
     }, [username]);
-
+//poop
     return (
         <div>
             <ul class='chat'>
