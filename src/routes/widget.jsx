@@ -10,7 +10,7 @@ function Widget() {
     // URL should look like "https://widget.bruh.ninja/widget?user={username}" 
 
     const [messages, setMessages] = useState([]);
-
+    
     useEffect(() => {
         ComfyJS.Init(username);
         ComfyJS.onChat = (user, message, flags, self, extra) => {
@@ -18,18 +18,25 @@ function Widget() {
             setMessages((prevMessages) => [...prevMessages, newMessage]);
             console.log(newMessage);
         };
+        return () => ComfyJS.Disconnect();
     }, [username]);
 
     return (
-        <>
-            <ul>
+        <div>
+            <ul class='chat'>
                 {messages.map(message => (
-                    <li class='chat' key={message.extra.id}>
-                        {message.user}: {message.message}
-                    </li>
+                    <>
+                    <li class="user" key={message.extra.id}>
+                            {message.user}
+                        </li>
+                        <li class="usermessage" key={message.extra.id}>
+                            {message.message}
+                        </li>
+                        
+                    </>
                 ))}
             </ul>
-        </>
+        </div>
     )
 }
 

@@ -1,8 +1,10 @@
-html,body {
+html,
+
+body {
     margin: 0;
     font-family: 'Lucida Sans Unicode', sans-serif;
     font-weight: bold;
-    color: hsl(197, 62%, 32%);
+    color: rgb(212, 154, 242)
 }
 
 .chat {
@@ -10,7 +12,8 @@ html,body {
     height: 350px;
     overflow-y: auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    height: auto;
 }
 
 .chat ul {
@@ -18,13 +21,55 @@ html,body {
     list-style-position: outside;
 }
 
-.chat li{
+.chat li.user{
+    background-image: linear-gradient(to right,	hsl(279, 77%, 76%), hsl(281, 63%, 49%));
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 10px;
+    height: 50%;
+    margin-bottom: 10px;
+    list-style-type: none;
+    color: black;
+    animation: pixelatefade ease-in 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: ease;
+
+}
+.chat li.usermessage {
     background-color: hsl(240, 4%, 10%);
     box-sizing: border-box;
     padding: 1rem 10px;
     margin-bottom: 10px;
     border-bottom: 10px solid;
-    border-image: linear-gradient(to right,hsl(280, 77%, 78%),hsl(281, 83%, 42%));
+    border-image: linear-gradient(to right, hsl(280, 77%, 78%), hsl(281, 83%, 42%));
     border-image-slice: 1;
     width: 100%;
+    list-style-type: none;
+    animation: pixelatefade ease-in 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: ease;
+}
+@keyframes fadeInAnimation{
+    0% {
+        opacity:0;
+
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes pixelatefade {
+    0% {
+        opacity: 0;
+        filter: blur(50px);
+    }
+    75%{
+        opacity:.75;
+        filter: blur(25px);
+    }
+    100%{
+        opacity: 1;
+        filter:blur(0px);
+
+    }
 }
